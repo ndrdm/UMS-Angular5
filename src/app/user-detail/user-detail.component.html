@@ -12,13 +12,20 @@
   <div class="form-group">
     <label for="fiscalcode">Fiscal Code </label>
     <input class="form-control" [(ngModel)]="user.fiscalcode" name="fiscalcode" id="fiscalcode">
+  </div><div class="form-group">
+    <label for="fiscalcode">Address </label>
+    <input class="form-control" [(ngModel)]="user.address" name="address" id="address">
+  </div><div class="form-group">
+    <label for="fiscalcode">Phone number </label>
+    <input class="form-control" [(ngModel)]="user.phone" name="phone" id="phone">
   </div>
   <div class="form-group">
     <label for="email">E-mail </label>
     <input class="form-control" [(ngModel)]="user.email" type="email" name="email" id="email">
   </div>
-  <div class="form-group form-footer">
-    <button class="btn-success " (click)="saveUser($event)">SAVE</button>
+  <div class="form-group form-footer text-center">
+    <button class="btn-success " (click)="saveUser(f.form)">SAVE</button>
     <button class="btn-secondary" (click)="resetForm(f.form)">RESET</button>
+   <button class="btn-primary" (click)="backToUsers()" style="align-self: center">BACK</button>
   </div>
 </form>

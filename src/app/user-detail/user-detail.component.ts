@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { User } from '../classes/User';
 import {UserService} from '../services/user.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
@@ -21,7 +21,7 @@ export class UserDetailComponent implements OnInit {
     return this._user
   }
 
-  constructor(private userService: UserService, private route:ActivatedRoute) {
+  constructor(private userService: UserService, private route:ActivatedRoute, private router:Router ) {
   }
 
   ngOnInit() {
@@ -29,27 +29,36 @@ export class UserDetailComponent implements OnInit {
 
     this.route.params.subscribe(
       (params) => {
+        if(!params.id){
+          return;
+        }
         this.user=this.userService.getUser(+params.id)
       }
     );
   }
 
   saveUser() {
-    alert(this.user.name + this.user.id)
     if (this.user.id > 0) {
       this.userService.updateUser(this.user)
     } else {
+      console.log(this.user)
       this.userService.createUser(this.user)
     }
+
+    this.router.navigate(["users"]);
   }
 
   resetForm(form){
-      if (this.user.id===0){
+    if (this.user.id===0){
         this.user= new User()
       } else {
         this.user = this._userCopy
       }
     }
+
+  backToUsers(){
+    this.router.navigate(['users'])
+  }
 
 
 

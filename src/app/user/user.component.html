@@ -5,12 +5,16 @@
 
 <td class="buttons">
   <div class="row">
-    <div class="col-md-6">
-    <button class="btn-primary btn-sm" type="button" (click)="updateUser(user)"><fa name="pencil" size="2x"></fa>
+    <div class="col-sm-4">
+      <button class="btn-primary btn-sm" type="button" (click)="showUserDetails(user)"><fa name="info" fixed="true">></fa>
+      </button>
+    </div>
+    <div class="col-sm-4">
+    <button class="btn-primary btn-sm" type="button" (click)="updateUser(user)"><fa name="pencil" fixed="true"></fa>
     </button>
     </div>
-    <div class="col-md-6">
-    <button class="btn-danger btn-sm" type="button" (click)="deleteUser(user)" ><fa name="trash-o" size="2x"></fa>
+    <div class="col-sm-4">
+    <button class="btn-danger btn-sm" type="button" (click)="deleteUser(user)" ><fa name="trash-o" fixed="true"></fa>
     </button>
     </div>
     </div>

@@ -3,6 +3,8 @@ export class User {
   name: string;
   lastname: string;
   fiscalcode: string;
+  address: string;
+  phone: number;
   email: string;
 
   constructor() {
@@ -10,6 +12,8 @@ export class User {
     this.name = "";
     this.lastname = "";
     this.fiscalcode = "";
+    this.address ="";
+    this.phone = 0;
     this.email = "";
   }
 

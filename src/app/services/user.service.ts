@@ -9,6 +9,8 @@ export class UserService {
       name: 'Mario',
       lastname: 'Rossi',
       fiscalcode: 'RSSMRA83A02S432B',
+      address: 'Via col Vento 22',
+      phone: 321456987,
       email:'rossi@gmail.com'
     },
 
@@ -17,13 +19,17 @@ export class UserService {
       name: 'Luisa',
       lastname: 'Verdi',
       fiscalcode: 'VRDLSU65T56R543V',
+      address: 'Piazza Grande 69',
+      phone: 3459877653,
       email:'verdi@gmail.com'
     },
     {
-      id: 2,
+      id: 3,
       name: 'Gino',
       lastname: 'Gialli',
       fiscalcode: 'GLLGNI90L15T123A',
+      address: 'Vicolo Senzanome 14',
+      phone: 339771111,
       email:'verdi@gmail.com'
     }
   ];
@@ -53,7 +59,7 @@ export class UserService {
   }
 
     createUser (user: User){
-
+      user.id=this.users.length+1 ;
       this.users.splice(0,0,user)
       }
 
